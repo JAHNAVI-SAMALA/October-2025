@@ -1,0 +1,12 @@
+class Solution:
+    def maximumEnergy(self, energy: List[int], k: int) -> int:
+        n = len(energy)
+        ans = -10** 18
+        for end in range(max(0,n-k),n):
+            s = 0
+            j = end
+            while j >= 0:
+                s += energy[j]
+                ans = max(ans,s)
+                j -= k
+        return ans
