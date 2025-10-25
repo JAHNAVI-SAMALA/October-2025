@@ -1,0 +1,6 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        weeks,extra = divmod(n,7)
+        tot = 28*weeks + 7 * weeks *(weeks-1)//2
+        tot += extra *(2 * weeks + 1 + extra )//2
+        return tot
